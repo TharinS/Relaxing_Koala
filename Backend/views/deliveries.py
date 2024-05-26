@@ -7,7 +7,12 @@ deliveries_bp = Blueprint('deliveries', __name__)
 @deliveries_bp.route('/deliveries', methods=['POST'])
 def create_delivery():
     data = request.get_json()
-    new_delivery = Delivery(**data)
+    new_delivery = Delivery(
+        address=data['address'],
+        state=data['state'],
+        postcode=data['postcode'],
+        delivery_time=data['delivery_time']
+    )
     db.session.add(new_delivery)
     db.session.commit()
     return jsonify({'id': new_delivery.id}), 201
@@ -15,12 +20,12 @@ def create_delivery():
 @deliveries_bp.route('/deliveries', methods=['GET'])
 def get_deliveries():
     deliveries = Delivery.query.all()
-    return jsonify([delivery.__dict__ for delivery in deliveries]), 200
+    return jsonify([delivery.to_dict() for delivery in deliveries]), 200
 
 @deliveries_bp.route('/deliveries/<int:id>', methods=['GET'])
 def get_delivery(id):
     delivery = Delivery.query.get_or_404(id)
-    return jsonify(delivery.__dict__), 200
+    return jsonify(delivery.to_dict()), 200
 
 @deliveries_bp.route('/deliveries/<int:id>', methods=['PUT'])
 def update_delivery(id):
@@ -29,7 +34,7 @@ def update_delivery(id):
     for key, value in data.items():
         setattr(delivery, key, value)
     db.session.commit()
-    return jsonify(delivery.__dict__), 200
+    return jsonify(delivery.to_dict()), 200
 
 @deliveries_bp.route('/deliveries/<int:id>', methods=['DELETE'])
 def delete_delivery(id):
