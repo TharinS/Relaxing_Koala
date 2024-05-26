@@ -2,7 +2,7 @@ from models.user import User
 from models.order import Order
 from models.order_detail import OrderDetail
 from models.food_item import FoodItem
-from models.delivery import Delivery  # Import the Delivery model
+from models.delivery import Delivery  
 
 def generate_receipt(receiver_id, user_id, order_id):
     user = User.query.get(user_id)
@@ -22,7 +22,7 @@ def generate_receipt(receiver_id, user_id, order_id):
     }
 
     if order.order_type == 'delivery':
-        delivery = Delivery.query.get(order.delivery_id)  # Fetch the delivery details using delivery_id
+        delivery = Delivery.query.get(order.delivery_id)  
         if delivery:
             receipt['delivery_address'] = f"{delivery.address}, {delivery.state}, {delivery.postcode}"
             receipt['delivery_charge'] = 5.0
