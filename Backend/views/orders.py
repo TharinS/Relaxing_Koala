@@ -9,7 +9,7 @@ orders_bp = Blueprint('orders', __name__)
 def create_order():
     data = request.get_json()
     new_order = Order(
-        table_number=data['table_number'],
+        table_number=data.get('table_number'),
         creator_id=data['creator_id'],
         creator_type=data['creator_type'],
         order_time=data['order_time'],
@@ -20,14 +20,15 @@ def create_order():
     db.session.add(new_order)
     db.session.commit()
 
-    # Update analytics counters
-    for item_id in data['items']:
-        analytics_record = Analytics.query.filter_by(food_item_id=item_id).first()
-        if analytics_record:
-            analytics_record.counter += 1
-        else:
-            new_analytics_record = Analytics(food_item_id=item_id, counter=1)
-            db.session.add(new_analytics_record)
+    # Update analytics counters (if applicable)
+    if 'items' in data:
+        for item_id in data['items']:
+            analytics_record = Analytics.query.filter_by(food_item_id=item_id).first()
+            if analytics_record:
+                analytics_record.counter += 1
+            else:
+                new_analytics_record = Analytics(food_item_id=item_id, counter=1)
+                db.session.add(new_analytics_record)
         db.session.commit()
 
     return jsonify({'id': new_order.id}), 201
@@ -35,12 +36,18 @@ def create_order():
 @orders_bp.route('/orders', methods=['GET'])
 def get_orders():
     orders = Order.query.all()
-    return jsonify([order.__dict__ for order in orders]), 200
+    orders_list = [{'id': order.id, 'table_number': order.table_number, 'creator_id': order.creator_id, 'creator_type': order.creator_type,
+                    'order_time': order.order_time.isoformat(), 'order_type': order.order_type, 'delivery_id': order.delivery_id,
+                    'total_price': str(order.total_price), 'created_at': order.created_at.isoformat(), 'updated_at': order.updated_at.isoformat()} for order in orders]
+    return jsonify(orders_list), 200
 
 @orders_bp.route('/orders/<int:id>', methods=['GET'])
 def get_order(id):
     order = Order.query.get_or_404(id)
-    return jsonify(order.__dict__), 200
+    order_details = {'id': order.id, 'table_number': order.table_number, 'creator_id': order.creator_id, 'creator_type': order.creator_type,
+                     'order_time': order.order_time.isoformat(), 'order_type': order.order_type, 'delivery_id': order.delivery_id,
+                     'total_price': str(order.total_price), 'created_at': order.created_at.isoformat(), 'updated_at': order.updated_at.isoformat()}
+    return jsonify(order_details), 200
 
 @orders_bp.route('/orders/<int:id>', methods=['PUT'])
 def update_order(id):
@@ -49,17 +56,20 @@ def update_order(id):
     for key, value in data.items():
         setattr(order, key, value)
     db.session.commit()
-    return jsonify(order.__dict__), 200
+    return jsonify({'id': order.id, 'table_number': order.table_number, 'creator_id': order.creator_id, 'creator_type': order.creator_type,
+                    'order_time': order.order_time.isoformat(), 'order_type': order.order_type, 'delivery_id': order.delivery_id,
+                    'total_price': str(order.total_price), 'created_at': order.created_at.isoformat(), 'updated_at': order.updated_at.isoformat()}), 200
 
 @orders_bp.route('/orders/<int:id>', methods=['DELETE'])
 def delete_order(id):
     order = Order.query.get_or_404(id)
 
-    # Update analytics counters
-    for item_id in order.items:
-        analytics_record = Analytics.query.filter_by(food_item_id=item_id).first()
-        if analytics_record:
-            analytics_record.counter -= 1
+    # Update analytics counters (if applicable)
+    if order.items:
+        for item_id in order.items:
+            analytics_record = Analytics.query.filter_by(food_item_id=item_id).first()
+            if analytics_record:
+                analytics_record.counter -= 1
         db.session.commit()
 
     db.session.delete(order)

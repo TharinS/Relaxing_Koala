@@ -34,7 +34,6 @@ def login_user():
 @users_bp.route('/users/logout', methods=['POST'])
 @login_required
 def logout_user():
-    logout_user()
     return jsonify({'message': 'Logout successful'}), 200
 
 @users_bp.route('/users', methods=['GET'])
