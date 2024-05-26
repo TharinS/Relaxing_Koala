@@ -1,0 +1,776 @@
+Testing most_popular endpoint
+{
+  "asset": "4",
+  "available": true,
+  "category": "main dish",
+  "description": "Stir-fried noodles with shrimp",
+  "foodname": "Pad Thai",
+  "id": 4,
+  "price": 10.0
+}
+
+
+Testing least_popular endpoint
+{
+  "asset": "28",
+  "available": true,
+  "category": "side dish",
+  "description": "Crispy prawn-flavored snacks",
+  "foodname": "Prawn Crackers",
+  "id": 28,
+  "price": 4.5
+}
+
+
+Testing top_10 endpoint
+[
+  {
+    "asset": "4",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried noodles with shrimp",
+    "foodname": "Pad Thai",
+    "id": 4,
+    "price": 10.0
+  },
+  {
+    "asset": "24",
+    "available": true,
+    "category": "side dish",
+    "description": "Sweet sticky rice with mango",
+    "foodname": "Mango Sticky Rice",
+    "id": 24,
+    "price": 6.5
+  },
+  {
+    "asset": "10",
+    "available": true,
+    "category": "side dish",
+    "description": "Spicy Thai soup with shrimp",
+    "foodname": "Tom Yum Soup",
+    "id": 10,
+    "price": 6.5
+  },
+  {
+    "asset": "11",
+    "available": true,
+    "category": "side dish",
+    "description": "Grilled chicken skewers with peanut sauce",
+    "foodname": "Chicken Satay",
+    "id": 11,
+    "price": 9.0
+  },
+  {
+    "asset": "20",
+    "available": true,
+    "category": "main dish",
+    "description": "Thai green curry with chicken",
+    "foodname": "Green Curry",
+    "id": 20,
+    "price": 13.5
+  },
+  {
+    "asset": "22",
+    "available": true,
+    "category": "side dish",
+    "description": "Grilled chicken skewers",
+    "foodname": "Yakitori",
+    "id": 22,
+    "price": 9.5
+  },
+  {
+    "asset": "27",
+    "available": true,
+    "category": "main dish",
+    "description": "Spicy tofu with minced meat",
+    "foodname": "Mapo Tofu",
+    "id": 27,
+    "price": 10.0
+  },
+  {
+    "asset": "13",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried rice with vegetables and meat",
+    "foodname": "Fried Rice",
+    "id": 13,
+    "price": 8.5
+  },
+  {
+    "asset": "12",
+    "available": true,
+    "category": "main dish",
+    "description": "Marinated beef slices",
+    "foodname": "Beef Bulgogi",
+    "id": 12,
+    "price": 13.0
+  },
+  {
+    "asset": "1",
+    "available": true,
+    "category": "main dish",
+    "description": "Grilled chicken with teriyaki sauce",
+    "foodname": "Chicken Teriyaki",
+    "id": 1,
+    "price": 12.5
+  }
+]
+
+
+Testing bottom_10 endpoint
+[
+  {
+    "asset": "28",
+    "available": true,
+    "category": "side dish",
+    "description": "Crispy prawn-flavored snacks",
+    "foodname": "Prawn Crackers",
+    "id": 28,
+    "price": 4.5
+  },
+  {
+    "asset": "29",
+    "available": true,
+    "category": "main dish",
+    "description": "Spicy chicken with Szechuan peppers",
+    "foodname": "Szechuan Chicken",
+    "id": 29,
+    "price": 13.0
+  },
+  {
+    "asset": "7",
+    "available": true,
+    "category": "main dish",
+    "description": "Mixed rice with vegetables and beef",
+    "foodname": "Bibimbap",
+    "id": 7,
+    "price": 12.0
+  },
+  {
+    "asset": "30",
+    "available": true,
+    "category": "side dish",
+    "description": "Chinese soup with beaten eggs",
+    "foodname": "Egg Drop Soup",
+    "id": 30,
+    "price": 4.0
+  },
+  {
+    "asset": "9",
+    "available": true,
+    "category": "main dish",
+    "description": "Roast duck with crispy skin",
+    "foodname": "Peking Duck",
+    "id": 9,
+    "price": 25.0
+  },
+  {
+    "asset": "5",
+    "available": true,
+    "category": "side dish",
+    "description": "Fried rolls filled with vegetables",
+    "foodname": "Spring Rolls",
+    "id": 5,
+    "price": 5.0
+  },
+  {
+    "asset": "25",
+    "available": true,
+    "category": "side dish",
+    "description": "Spicy and tangy soup",
+    "foodname": "Hot and Sour Soup",
+    "id": 25,
+    "price": 5.5
+  },
+  {
+    "asset": "8",
+    "available": true,
+    "category": "side dish",
+    "description": "Fermented spicy cabbage",
+    "foodname": "Kimchi",
+    "id": 8,
+    "price": 4.0
+  },
+  {
+    "asset": "14",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried tofu with vegetables",
+    "foodname": "Tofu Stir-fry",
+    "id": 14,
+    "price": 9.0
+  },
+  {
+    "asset": "17",
+    "available": true,
+    "category": "main dish",
+    "description": "Vietnamese noodle soup with beef",
+    "foodname": "Pho",
+    "id": 17,
+    "price": 10.0
+  }
+]
+
+
+Testing all_descending endpoint
+[
+  {
+    "asset": "4",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried noodles with shrimp",
+    "foodname": "Pad Thai",
+    "id": 4,
+    "price": 10.0
+  },
+  {
+    "asset": "24",
+    "available": true,
+    "category": "side dish",
+    "description": "Sweet sticky rice with mango",
+    "foodname": "Mango Sticky Rice",
+    "id": 24,
+    "price": 6.5
+  },
+  {
+    "asset": "10",
+    "available": true,
+    "category": "side dish",
+    "description": "Spicy Thai soup with shrimp",
+    "foodname": "Tom Yum Soup",
+    "id": 10,
+    "price": 6.5
+  },
+  {
+    "asset": "11",
+    "available": true,
+    "category": "side dish",
+    "description": "Grilled chicken skewers with peanut sauce",
+    "foodname": "Chicken Satay",
+    "id": 11,
+    "price": 9.0
+  },
+  {
+    "asset": "20",
+    "available": true,
+    "category": "main dish",
+    "description": "Thai green curry with chicken",
+    "foodname": "Green Curry",
+    "id": 20,
+    "price": 13.5
+  },
+  {
+    "asset": "22",
+    "available": true,
+    "category": "side dish",
+    "description": "Grilled chicken skewers",
+    "foodname": "Yakitori",
+    "id": 22,
+    "price": 9.5
+  },
+  {
+    "asset": "27",
+    "available": true,
+    "category": "main dish",
+    "description": "Spicy tofu with minced meat",
+    "foodname": "Mapo Tofu",
+    "id": 27,
+    "price": 10.0
+  },
+  {
+    "asset": "13",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried rice with vegetables and meat",
+    "foodname": "Fried Rice",
+    "id": 13,
+    "price": 8.5
+  },
+  {
+    "asset": "12",
+    "available": true,
+    "category": "main dish",
+    "description": "Marinated beef slices",
+    "foodname": "Beef Bulgogi",
+    "id": 12,
+    "price": 13.0
+  },
+  {
+    "asset": "1",
+    "available": true,
+    "category": "main dish",
+    "description": "Grilled chicken with teriyaki sauce",
+    "foodname": "Chicken Teriyaki",
+    "id": 1,
+    "price": 12.5
+  },
+  {
+    "asset": "26",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried noodles with vegetables",
+    "foodname": "Lo Mein",
+    "id": 26,
+    "price": 9.0
+  },
+  {
+    "asset": "18",
+    "available": true,
+    "category": "side dish",
+    "description": "Japanese dumplings",
+    "foodname": "Gyoza",
+    "id": 18,
+    "price": 7.0
+  },
+  {
+    "asset": "3",
+    "available": true,
+    "category": "side dish",
+    "description": "Traditional Japanese soup with tofu and seaweed",
+    "foodname": "Miso Soup",
+    "id": 3,
+    "price": 3.5
+  },
+  {
+    "asset": "15",
+    "available": true,
+    "category": "main dish",
+    "description": "Japanese noodle soup",
+    "foodname": "Ramen",
+    "id": 15,
+    "price": 11.0
+  },
+  {
+    "asset": "19",
+    "available": true,
+    "category": "main dish",
+    "description": "Spicy chicken curry with rice",
+    "foodname": "Chicken Curry",
+    "id": 19,
+    "price": 14.0
+  },
+  {
+    "asset": "2",
+    "available": true,
+    "category": "main dish",
+    "description": "Rice and fish rolled in seaweed",
+    "foodname": "Sushi Roll",
+    "id": 2,
+    "price": 8.0
+  },
+  {
+    "asset": "23",
+    "available": true,
+    "category": "main dish",
+    "description": "Spicy noodle soup with coconut milk",
+    "foodname": "Laksa",
+    "id": 23,
+    "price": 11.5
+  },
+  {
+    "asset": "21",
+    "available": true,
+    "category": "main dish",
+    "description": "Sliced raw fish",
+    "foodname": "Sashimi",
+    "id": 21,
+    "price": 18.0
+  },
+  {
+    "asset": "6",
+    "available": true,
+    "category": "main dish",
+    "description": "Steamed dumplings with various fillings",
+    "foodname": "Dim Sum",
+    "id": 6,
+    "price": 15.0
+  },
+  {
+    "asset": "16",
+    "available": true,
+    "category": "side dish",
+    "description": "Battered and fried seafood and vegetables",
+    "foodname": "Tempura",
+    "id": 16,
+    "price": 12.0
+  },
+  {
+    "asset": "17",
+    "available": true,
+    "category": "main dish",
+    "description": "Vietnamese noodle soup with beef",
+    "foodname": "Pho",
+    "id": 17,
+    "price": 10.0
+  },
+  {
+    "asset": "14",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried tofu with vegetables",
+    "foodname": "Tofu Stir-fry",
+    "id": 14,
+    "price": 9.0
+  },
+  {
+    "asset": "8",
+    "available": true,
+    "category": "side dish",
+    "description": "Fermented spicy cabbage",
+    "foodname": "Kimchi",
+    "id": 8,
+    "price": 4.0
+  },
+  {
+    "asset": "25",
+    "available": true,
+    "category": "side dish",
+    "description": "Spicy and tangy soup",
+    "foodname": "Hot and Sour Soup",
+    "id": 25,
+    "price": 5.5
+  },
+  {
+    "asset": "5",
+    "available": true,
+    "category": "side dish",
+    "description": "Fried rolls filled with vegetables",
+    "foodname": "Spring Rolls",
+    "id": 5,
+    "price": 5.0
+  },
+  {
+    "asset": "9",
+    "available": true,
+    "category": "main dish",
+    "description": "Roast duck with crispy skin",
+    "foodname": "Peking Duck",
+    "id": 9,
+    "price": 25.0
+  },
+  {
+    "asset": "30",
+    "available": true,
+    "category": "side dish",
+    "description": "Chinese soup with beaten eggs",
+    "foodname": "Egg Drop Soup",
+    "id": 30,
+    "price": 4.0
+  },
+  {
+    "asset": "7",
+    "available": true,
+    "category": "main dish",
+    "description": "Mixed rice with vegetables and beef",
+    "foodname": "Bibimbap",
+    "id": 7,
+    "price": 12.0
+  },
+  {
+    "asset": "29",
+    "available": true,
+    "category": "main dish",
+    "description": "Spicy chicken with Szechuan peppers",
+    "foodname": "Szechuan Chicken",
+    "id": 29,
+    "price": 13.0
+  },
+  {
+    "asset": "28",
+    "available": true,
+    "category": "side dish",
+    "description": "Crispy prawn-flavored snacks",
+    "foodname": "Prawn Crackers",
+    "id": 28,
+    "price": 4.5
+  }
+]
+
+
+Testing all_ascending endpoint
+[
+  {
+    "asset": "28",
+    "available": true,
+    "category": "side dish",
+    "description": "Crispy prawn-flavored snacks",
+    "foodname": "Prawn Crackers",
+    "id": 28,
+    "price": 4.5
+  },
+  {
+    "asset": "29",
+    "available": true,
+    "category": "main dish",
+    "description": "Spicy chicken with Szechuan peppers",
+    "foodname": "Szechuan Chicken",
+    "id": 29,
+    "price": 13.0
+  },
+  {
+    "asset": "7",
+    "available": true,
+    "category": "main dish",
+    "description": "Mixed rice with vegetables and beef",
+    "foodname": "Bibimbap",
+    "id": 7,
+    "price": 12.0
+  },
+  {
+    "asset": "30",
+    "available": true,
+    "category": "side dish",
+    "description": "Chinese soup with beaten eggs",
+    "foodname": "Egg Drop Soup",
+    "id": 30,
+    "price": 4.0
+  },
+  {
+    "asset": "9",
+    "available": true,
+    "category": "main dish",
+    "description": "Roast duck with crispy skin",
+    "foodname": "Peking Duck",
+    "id": 9,
+    "price": 25.0
+  },
+  {
+    "asset": "5",
+    "available": true,
+    "category": "side dish",
+    "description": "Fried rolls filled with vegetables",
+    "foodname": "Spring Rolls",
+    "id": 5,
+    "price": 5.0
+  },
+  {
+    "asset": "25",
+    "available": true,
+    "category": "side dish",
+    "description": "Spicy and tangy soup",
+    "foodname": "Hot and Sour Soup",
+    "id": 25,
+    "price": 5.5
+  },
+  {
+    "asset": "8",
+    "available": true,
+    "category": "side dish",
+    "description": "Fermented spicy cabbage",
+    "foodname": "Kimchi",
+    "id": 8,
+    "price": 4.0
+  },
+  {
+    "asset": "14",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried tofu with vegetables",
+    "foodname": "Tofu Stir-fry",
+    "id": 14,
+    "price": 9.0
+  },
+  {
+    "asset": "17",
+    "available": true,
+    "category": "main dish",
+    "description": "Vietnamese noodle soup with beef",
+    "foodname": "Pho",
+    "id": 17,
+    "price": 10.0
+  },
+  {
+    "asset": "16",
+    "available": true,
+    "category": "side dish",
+    "description": "Battered and fried seafood and vegetables",
+    "foodname": "Tempura",
+    "id": 16,
+    "price": 12.0
+  },
+  {
+    "asset": "6",
+    "available": true,
+    "category": "main dish",
+    "description": "Steamed dumplings with various fillings",
+    "foodname": "Dim Sum",
+    "id": 6,
+    "price": 15.0
+  },
+  {
+    "asset": "21",
+    "available": true,
+    "category": "main dish",
+    "description": "Sliced raw fish",
+    "foodname": "Sashimi",
+    "id": 21,
+    "price": 18.0
+  },
+  {
+    "asset": "23",
+    "available": true,
+    "category": "main dish",
+    "description": "Spicy noodle soup with coconut milk",
+    "foodname": "Laksa",
+    "id": 23,
+    "price": 11.5
+  },
+  {
+    "asset": "2",
+    "available": true,
+    "category": "main dish",
+    "description": "Rice and fish rolled in seaweed",
+    "foodname": "Sushi Roll",
+    "id": 2,
+    "price": 8.0
+  },
+  {
+    "asset": "19",
+    "available": true,
+    "category": "main dish",
+    "description": "Spicy chicken curry with rice",
+    "foodname": "Chicken Curry",
+    "id": 19,
+    "price": 14.0
+  },
+  {
+    "asset": "15",
+    "available": true,
+    "category": "main dish",
+    "description": "Japanese noodle soup",
+    "foodname": "Ramen",
+    "id": 15,
+    "price": 11.0
+  },
+  {
+    "asset": "3",
+    "available": true,
+    "category": "side dish",
+    "description": "Traditional Japanese soup with tofu and seaweed",
+    "foodname": "Miso Soup",
+    "id": 3,
+    "price": 3.5
+  },
+  {
+    "asset": "18",
+    "available": true,
+    "category": "side dish",
+    "description": "Japanese dumplings",
+    "foodname": "Gyoza",
+    "id": 18,
+    "price": 7.0
+  },
+  {
+    "asset": "26",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried noodles with vegetables",
+    "foodname": "Lo Mein",
+    "id": 26,
+    "price": 9.0
+  },
+  {
+    "asset": "1",
+    "available": true,
+    "category": "main dish",
+    "description": "Grilled chicken with teriyaki sauce",
+    "foodname": "Chicken Teriyaki",
+    "id": 1,
+    "price": 12.5
+  },
+  {
+    "asset": "12",
+    "available": true,
+    "category": "main dish",
+    "description": "Marinated beef slices",
+    "foodname": "Beef Bulgogi",
+    "id": 12,
+    "price": 13.0
+  },
+  {
+    "asset": "13",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried rice with vegetables and meat",
+    "foodname": "Fried Rice",
+    "id": 13,
+    "price": 8.5
+  },
+  {
+    "asset": "27",
+    "available": true,
+    "category": "main dish",
+    "description": "Spicy tofu with minced meat",
+    "foodname": "Mapo Tofu",
+    "id": 27,
+    "price": 10.0
+  },
+  {
+    "asset": "22",
+    "available": true,
+    "category": "side dish",
+    "description": "Grilled chicken skewers",
+    "foodname": "Yakitori",
+    "id": 22,
+    "price": 9.5
+  },
+  {
+    "asset": "20",
+    "available": true,
+    "category": "main dish",
+    "description": "Thai green curry with chicken",
+    "foodname": "Green Curry",
+    "id": 20,
+    "price": 13.5
+  },
+  {
+    "asset": "11",
+    "available": true,
+    "category": "side dish",
+    "description": "Grilled chicken skewers with peanut sauce",
+    "foodname": "Chicken Satay",
+    "id": 11,
+    "price": 9.0
+  },
+  {
+    "asset": "10",
+    "available": true,
+    "category": "side dish",
+    "description": "Spicy Thai soup with shrimp",
+    "foodname": "Tom Yum Soup",
+    "id": 10,
+    "price": 6.5
+  },
+  {
+    "asset": "24",
+    "available": true,
+    "category": "side dish",
+    "description": "Sweet sticky rice with mango",
+    "foodname": "Mango Sticky Rice",
+    "id": 24,
+    "price": 6.5
+  },
+  {
+    "asset": "4",
+    "available": true,
+    "category": "main dish",
+    "description": "Stir-fried noodles with shrimp",
+    "foodname": "Pad Thai",
+    "id": 4,
+    "price": 10.0
+  }
+]
+
+
+Testing random_recommendation endpoint
+{
+  "asset": "19",
+  "available": true,
+  "category": "main dish",
+  "description": "Spicy chicken curry with rice",
+  "foodname": "Chicken Curry",
+  "id": 19,
+  "price": 14.0
+}
+
+
