@@ -26,7 +26,6 @@ def generate_receipt(receiver_id, user_id, order_id):
         if delivery:
             receipt['delivery_address'] = f"{delivery.address}, {delivery.state}, {delivery.postcode}"
             receipt['delivery_charge'] = 5.0
-            receipt['total_price'] += 5.0
     else:
         receipt['table_number'] = order.table_number
 
