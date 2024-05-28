@@ -1,4 +1,3 @@
-// main.js
 document.addEventListener("DOMContentLoaded", function() {
     // Load the navbar
     fetch("../pages/navbar.html")
@@ -12,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 const userLinks = document.getElementById("userLinks");
                 userLinks.innerHTML = `
                     <li class="nav-item">
+                        <a class="nav-link" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/basket">Basket</a>
                     </li>
                     <li class="nav-item">
@@ -24,8 +26,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 document.getElementById("logoutLink").addEventListener("click", function() {
                     localStorage.removeItem("user");
-                    window.location.href = "/";
+                    window.location.href = "/login";
                 });
+            } else {
+                const userLinks = document.getElementById("userLinks");
+                userLinks.innerHTML = `
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create_account">Create Account</a>
+                    </li>
+                `;
             }
         });
 });
