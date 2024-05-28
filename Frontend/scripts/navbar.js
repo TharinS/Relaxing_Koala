@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 document.getElementById("logoutLink").addEventListener("click", function() {
                     localStorage.removeItem("user");
-                    window.location.href = "/login.html";
+                    window.location.href = "/login";
                 });
             } else {
                 userLinks.innerHTML = `
                     <li class="nav-item">
-                        <a class="nav-link" href="/login.html">Login</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/create_account.html">Create Account</a>
