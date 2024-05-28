@@ -4,15 +4,15 @@ const app = express();
 
 app.use(express.static(path.join(__dirname)));
 
-app.get('/api/greet', (req, res) => {
-    res.json({ message: 'Hello from the server!' });
-});
-
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages/about.html'));
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
 });
