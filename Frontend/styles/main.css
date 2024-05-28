@@ -1,0 +1,61 @@
+/* Custom styles for the homepage */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #343a40; /* Darker color for better contrast */
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: #e1f5fe !important;
+}
+
+.jumbotron {
+    background-color: #e3f2fd; /* Light secondary color */
+    border: 1px solid #5bc0de; /* Primary border color */
+    margin-bottom: 0;
+}
+
+.jumbotron .btn-primary {
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+}
+
+.jumbotron .btn-primary:hover {
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+
+footer {
+    background-color: #343a40; /* Same dark color as navbar for uniformity */
+    color: #fff;
+    border-top: 1px solid #e7e7e7;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer a {
+    color: #e1f5fe;
+}
+
+footer a:hover {
+    color: #b3e5fc;
+}
+
+h1, .display-4 {
+    color: #0275d8; /* Secondary color */
+}
+
+p {
+    font-size: 1.2em;
+}
