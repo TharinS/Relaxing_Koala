@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Update the navbar based on the user state
             const user = JSON.parse(localStorage.getItem("user"));
+            const userLinks = document.getElementById("userLinks");
             if (user) {
-                const userLinks = document.getElementById("userLinks");
                 userLinks.innerHTML = `
                     <li class="nav-item">
                         <a class="nav-link" href="/profile">Profile</a>
@@ -17,24 +17,29 @@ document.addEventListener("DOMContentLoaded", function() {
                         <a class="nav-link" href="/basket">Basket</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/past_orders">Past Orders</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#" id="logoutLink">Logout</a>
                     </li>
                 `;
 
                 document.getElementById("logoutLink").addEventListener("click", function() {
                     localStorage.removeItem("user");
-                    window.location.href = "/login";
+                    window.location.href = "/login.html";
                 });
             } else {
-                const userLinks = document.getElementById("userLinks");
                 userLinks.innerHTML = `
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="/login.html">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/create_account">Create Account</a>
+                        <a class="nav-link" href="/create_account.html">Create Account</a>
                     </li>
                 `;
             }
+        })
+        .catch(error => {
+            console.error("Error loading navbar:", error);
         });
 });
