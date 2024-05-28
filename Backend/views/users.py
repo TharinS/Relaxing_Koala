@@ -68,3 +68,15 @@ def delete_user(id):
     db.session.delete(user)
     db.session.commit()
     return '', 204
+
+@users_bp.route('/users/check_email', methods=['POST'])
+def check_email():
+    data = request.get_json()
+    email = data.get('email')
+    if not email:
+        return jsonify({'message': 'Email is required'}), 400
+
+    user = User.query.filter_by(email=email).first()
+    if user:
+        return jsonify({'exists': True}), 200
+    return jsonify({'exists': False}), 200
