@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from controllers.financial_document import generate_receipt
+from controllers.financial_document import generate_receipt, get_user_receipts
 
 financial_document_bp = Blueprint('financial_document', __name__)
 
@@ -19,3 +19,12 @@ def receipt():
         return jsonify({'message': error}), 404
 
     return jsonify(receipt), 200
+
+@financial_document_bp.route('/financial_document/user_receipts/<int:user_id>', methods=['GET'])
+def user_receipts(user_id):
+    receipts, error = get_user_receipts(user_id)
+
+    if error:
+        return jsonify({'message': error}), 404
+
+    return jsonify(receipts), 200

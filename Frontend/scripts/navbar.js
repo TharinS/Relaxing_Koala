@@ -17,9 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         <a class="nav-link" href="/basket">Basket</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/order_list">Order List</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#" id="logoutLink">Logout</a>
                     </li>
                 `;

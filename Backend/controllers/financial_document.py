@@ -2,7 +2,7 @@ from models.user import User
 from models.order import Order
 from models.order_detail import OrderDetail
 from models.food_item import FoodItem
-from models.delivery import Delivery  
+from models.delivery import Delivery
 
 def generate_receipt(receiver_id, user_id, order_id):
     user = User.query.get(user_id)
@@ -22,7 +22,7 @@ def generate_receipt(receiver_id, user_id, order_id):
     }
 
     if order.order_type == 'delivery':
-        delivery = Delivery.query.get(order.delivery_id)  
+        delivery = Delivery.query.get(order.delivery_id)
         if delivery:
             receipt['delivery_address'] = f"{delivery.address}, {delivery.state}, {delivery.postcode}"
             receipt['delivery_charge'] = 5.0
@@ -41,3 +41,16 @@ def generate_receipt(receiver_id, user_id, order_id):
             })
 
     return receipt, None
+
+def get_user_receipts(user_id):
+    orders = Order.query.filter_by(creator_id=user_id).all()  # Use creator_id instead of user_id
+    if not orders:
+        return None, "No orders found for this user."
+
+    receipts = []
+    for order in orders:
+        receipt, error = generate_receipt(order.creator_id, order.creator_id, order.id)
+        if receipt:
+            receipts.append(receipt)
+
+    return receipts, None if receipts else "No receipts found."
