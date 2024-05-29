@@ -50,7 +50,7 @@ def delete_food_item(id):
 def get_food_item_asset(id):
     food_item = FoodItem.query.get_or_404(id)
     asset_folder = current_app.config['UPLOAD_FOLDER']
-    asset_filename = retrieve_filename(asset_folder, id)
+    asset_filename = retrieve_filename(asset_folder, food_item.asset)
     
     if not asset_filename:
         return jsonify({'message': 'No asset found for this food item'}), 404
