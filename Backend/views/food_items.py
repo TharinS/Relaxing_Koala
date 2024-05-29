@@ -1,6 +1,7 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, send_from_directory, current_app
 from app import db
 from models.food_item import FoodItem
+from controllers.food_item import retrieve_filename
 
 food_items_bp = Blueprint('food_items', __name__)
 
@@ -44,3 +45,13 @@ def delete_food_item(id):
     db.session.delete(food_item)
     db.session.commit()
     return '', 204
+
+@food_items_bp.route('/food_items/asset/<int:id>', methods=['GET'])
+def get_food_item_asset(id):
+    food_item = FoodItem.query.get_or_404(id)
+    asset_folder = current_app.config['UPLOAD_FOLDER']
+    asset_filename = retrieve_filename(asset_folder, id)
+    
+    if not asset_filename:
+        return jsonify({'message': 'No asset found for this food item'}), 404
+    return send_from_directory(asset_folder, asset_filename)
