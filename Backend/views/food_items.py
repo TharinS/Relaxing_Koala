@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, send_from_directory, current_app
+from flask import Blueprint, request, jsonify, send_from_directory, current_app, make_response
 from app import db
 from models.food_item import FoodItem
 from controllers.food_item import retrieve_filename
@@ -54,4 +54,10 @@ def get_food_item_asset(id):
     
     if not asset_filename:
         return jsonify({'message': 'No asset found for this food item'}), 404
-    return send_from_directory(asset_folder, asset_filename)
+
+    response = make_response(send_from_directory(asset_folder, asset_filename))
+    response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '0'
+    
+    return response
