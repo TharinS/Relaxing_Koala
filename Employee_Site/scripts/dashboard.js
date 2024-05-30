@@ -131,8 +131,6 @@ function completeOrder() {
         console.log("Order completed:", data);
         localStorage.removeItem("cart");
         window.location.href = "/receipts";
-        // Reload the current order to clear the table
-        loadCurrentOrder();
     })
     .catch(error => {
         console.error("Error completing order:", error);
