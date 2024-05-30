@@ -8,6 +8,7 @@ def register_blueprints(app):
     from .order_details import order_details_bp
     from .transactions import transactions_bp
     from .financial_documents import financial_document_bp
+    from views.payment_processor import payment_processor_bp
 
     app.register_blueprint(users_bp)
     app.register_blueprint(food_items_bp)
@@ -18,3 +19,4 @@ def register_blueprints(app):
     app.register_blueprint(order_details_bp)
     app.register_blueprint(transactions_bp)
     app.register_blueprint(financial_document_bp)
+    app.register_blueprint(payment_processor_bp)

@@ -28,9 +28,12 @@ app.get('/past_orders', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages/past_orders.html'));
 });
 
-
 app.get('/menu', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages/menu.html'));
+});
+
+app.get('/cart', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages/cart.html'));
 });
 
 const port = process.env.PORT || 3000;

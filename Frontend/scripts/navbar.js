@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <a class="nav-link" href="/profile">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/basket">Basket</a>
+                        <a class="nav-link" href="/cart">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/past_orders">Past Orders</a>
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/create_account.html">Create Account</a>
+                        <a class="nav-link" href="/create_account">Create Account</a>
                     </li>
                 `;
             }

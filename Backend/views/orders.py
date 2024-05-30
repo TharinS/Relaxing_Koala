@@ -70,7 +70,7 @@ def update_order(id):
                     'order_time': order.order_time.isoformat(), 'order_type': order.order_type, 'delivery_id': order.delivery_id,
                     'total_price': str(order.total_price), 'created_at': order.created_at.isoformat(), 'updated_at': order.updated_at.isoformat()}), 200
 
-@orders_bp.route('/orders/<int:id>', methods['DELETE'])
+@orders_bp.route('/orders/<int:id>', methods=['DELETE'])
 def delete_order(id):
     order = Order.query.get_or_404(id)
 
