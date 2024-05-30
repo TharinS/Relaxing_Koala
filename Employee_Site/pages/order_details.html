@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details - Relaxing Koala</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="bg-dark text-white">
+    <div id="navbar"></div>
+    <div class="container mt-4">
+        <div id="employeeInfo" class="mb-3"></div>
+        <h1 class="text-center">Order Details</h1>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="tableNumber">Table Number:</label>
+                <input type="number" class="form-control" id="tableNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="paymentOption">Payment Option:</label>
+                <select class="form-control" id="paymentOption" required>
+                    <option value="cash">Cash</option>
+                    <option value="card">Card</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Order</button>
+            <button type="button" class="btn btn-secondary" onclick="clearOrder()">Clear Order</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center text-white mt-5">
+            <span>Relaxing Koala &copy; 2024. All rights reserved. | <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Service</a></span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/order_details.js"></script>
+</body>
+</html>

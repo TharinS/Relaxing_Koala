@@ -34,6 +34,21 @@ def login_user_route():
         }), 200
     return jsonify({'message': 'Invalid credentials'}), 401
 
+@users_bp.route('/users/employee_login', methods=['POST'])
+def employee_login():
+    data = request.get_json()
+    user = User.query.filter_by(email=data['email']).first()
+    if user and user.password == data['password']:
+        if user.type == 'employee':
+            login_user(user)
+            return jsonify({
+                'message': 'Login successful',
+                'user': user.to_dict()  # Include user details in the response
+            }), 200
+        else:
+            return jsonify({'message': 'Unauthorized access: Not an employee'}), 403
+    return jsonify({'message': 'Invalid credentials'}), 401
+
 @users_bp.route('/users/logout', methods=['POST'])
 @login_required
 def logout_user_route():

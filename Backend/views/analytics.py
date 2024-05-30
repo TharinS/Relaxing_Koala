@@ -1,4 +1,3 @@
-import logging
 from flask import Blueprint, jsonify
 from app import db
 from models.food_item import FoodItem
@@ -24,9 +23,6 @@ def least_popular():
 @analytics_bp.route('/analytics/top_10', methods=['GET'])
 def top_10():
     top_10_items = db.session.query(FoodItem).join(Analytics).order_by(Analytics.counter.desc()).limit(10).all()
-    logging.debug(f'Top 10 items query result: {top_10_items}')
-    if top_10_items:
-        logging.debug(f'Top 10 items data: {[item.to_dict() for item in top_10_items]}')
     return jsonify([item.to_dict() for item in top_10_items]), 200
 
 @analytics_bp.route('/analytics/bottom_10', methods=['GET'])

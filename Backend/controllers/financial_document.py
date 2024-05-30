@@ -54,3 +54,11 @@ def get_user_receipts(user_id):
             receipts.append(receipt)
 
     return receipts, None if receipts else "No receipts found."
+
+def get_last_user_receipt(user_id):
+    order = Order.query.filter_by(creator_id=user_id).order_by(Order.created_at.desc()).first()
+    if not order:
+        return None, "No receipt found for this user"
+    
+    receipt, error = generate_receipt(order.creator_id, order.creator_id, order.id)
+    return receipt, error
