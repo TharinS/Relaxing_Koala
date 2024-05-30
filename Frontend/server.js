@@ -36,6 +36,10 @@ app.get('/cart', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages/cart.html'));
 });
 
+app.get('/reservations', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages/reservations.html'));
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);

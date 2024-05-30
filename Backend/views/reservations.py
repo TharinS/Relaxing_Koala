@@ -15,12 +15,12 @@ def create_reservation():
 @reservations_bp.route('/reservations', methods=['GET'])
 def get_reservations():
     reservations = Reservation.query.all()
-    return jsonify([reservation.__dict__ for reservation in reservations]), 200
+    return jsonify([reservation.to_dict() for reservation in reservations]), 200
 
 @reservations_bp.route('/reservations/<int:id>', methods=['GET'])
 def get_reservation(id):
     reservation = Reservation.query.get_or_404(id)
-    return jsonify(reservation.__dict__), 200
+    return jsonify(reservation.to_dict()), 200
 
 @reservations_bp.route('/reservations/<int:id>', methods=['PUT'])
 def update_reservation(id):
@@ -29,7 +29,7 @@ def update_reservation(id):
     for key, value in data.items():
         setattr(reservation, key, value)
     db.session.commit()
-    return jsonify(reservation.__dict__), 200
+    return jsonify(reservation.to_dict()), 200
 
 @reservations_bp.route('/reservations/<int:id>', methods=['DELETE'])
 def delete_reservation(id):
