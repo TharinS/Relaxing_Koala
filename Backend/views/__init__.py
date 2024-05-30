@@ -5,6 +5,7 @@ def register_blueprints(app):
     from .deliveries import deliveries_bp
     from .analytics import analytics_bp
     from .orders import orders_bp
+    from .order_details import order_details_bp
     from .transactions import transactions_bp
     from .financial_documents import financial_document_bp
 
@@ -14,5 +15,6 @@ def register_blueprints(app):
     app.register_blueprint(deliveries_bp)
     app.register_blueprint(analytics_bp)
     app.register_blueprint(orders_bp)
+    app.register_blueprint(order_details_bp)
     app.register_blueprint(transactions_bp)
     app.register_blueprint(financial_document_bp)
