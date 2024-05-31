@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/create_account.html">Create Account</a>
+                        <a class="nav-link" href="/create_account">Create Account</a>
                     </li>
                 `;
             }
